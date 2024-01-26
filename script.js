@@ -2,10 +2,10 @@
 let num = Number(prompt('Please enter the number'));
 let degree = Number(prompt('Please enter the degree'));
 function pow(num, degree) {
-    let result = 1;
-    for (let i = 0; i < degree; i++){
-        result = result * num;
+    if (degree === 0) {
+        return 1;
+    } else {
+        return num * pow(num, degree - 1);
     }
-    return result;
 }
 console.log(pow(num,degree));
